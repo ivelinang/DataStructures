@@ -1,0 +1,11 @@
+﻿  Vector.cpp
+d:\c++\datastructures\datastructures\datastructures\vector.cpp(8): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\c++\datastructures\datastructures\datastructures\vector.cpp(9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\c++\datastructures\datastructures\datastructures\vector.cpp(10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  LinkedList.cpp
+  Generating Code...
+  Compiling...
+  Main.cpp
+  Generating Code...
+  DataStructures.vcxproj -> D:\C++\DataStructures\DataStructures\Debug\DataStructures.exe
+  DataStructures.vcxproj -> D:\C++\DataStructures\DataStructures\Debug\DataStructures.pdb (Partial PDB)
