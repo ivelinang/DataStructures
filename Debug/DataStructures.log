@@ -1,11 +1,8 @@
-﻿  Vector.cpp
-d:\c++\datastructures\datastructures\datastructures\vector.cpp(8): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-d:\c++\datastructures\datastructures\datastructures\vector.cpp(9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-d:\c++\datastructures\datastructures\datastructures\vector.cpp(10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  LinkedList.cpp
+﻿  BinarySearchTree.cpp
+d:\c++\datastructures\datastructures\datastructures\binarysearchtree.cpp(209): warning C4129: ' ': unrecognized character escape sequence
   Generating Code...
-  Compiling...
+d:\c++\datastructures\datastructures\datastructures\binarysearchtree.cpp(187): warning C4715: 'BinarySearchTree::containHelper': not all control paths return a value
+  Skipping... (no relevant changes detected)
   Main.cpp
-  Generating Code...
   DataStructures.vcxproj -> D:\C++\DataStructures\DataStructures\Debug\DataStructures.exe
   DataStructures.vcxproj -> D:\C++\DataStructures\DataStructures\Debug\DataStructures.pdb (Partial PDB)

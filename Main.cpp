@@ -4,6 +4,8 @@
 #include "LinkedList.h"
 #include "Stack.h"
 #include "Queue.h"
+#include "BinaryTree.h"
+#include "BinarySearchTree.h"
 
 double func(double x)
 {
@@ -220,6 +222,31 @@ void testQueue()
 	myQ.printData();
 }
 
+void testBinaryTree()
+{
+	BinarySearchTree bTree;
+	bTree.include(8);
+	bTree.include(4);
+	bTree.include(2);
+	bTree.include(6);
+	bTree.include(5);
+	bTree.include(10);
+	bTree.include(20);
+
+	std::cout << "done with include";
+	std::cin.get();
+
+	bTree.printv2(bTree.getTopNode());
+	//bTree.print(bTree.getTopNode());
+
+	std::cout << "is in Tree? " << bTree.contains(1) << "\n";
+	std::cout << "is in Tree v2? " << bTree.contains(1) << "\n";
+	cin.get();
+
+	bTree.preOrderTraversal(bTree.getTopNode());
+	cin.get();
+}
+
 void testInheritance()
 {
 	std::cout << "hey" << 1;
@@ -240,6 +267,7 @@ int main() {
 	//testArrays();
 	//testLinkedList();
 	//testStack();
-	testQueue();
+	//testQueue();
+	testBinaryTree();
 	return 0;
 }
