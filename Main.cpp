@@ -6,6 +6,7 @@
 #include "Queue.h"
 #include "BinaryTree.h"
 #include "BinarySearchTree.h"
+#include "Graph.h"
 
 double func(double x)
 {
@@ -247,6 +248,43 @@ void testBinaryTree()
 	cin.get();
 }
 
+void testGraph()
+{
+	Graph g;
+	std::cout << " size " << g.size() << "\n";
+	g.addVertex("A");
+	g.addVertex("B");
+	g.addVertex("C");
+	g.addVertex("D");
+	g.addVertex("E");
+	g.addVertex("F");
+	g.addEdge(0, 1);
+	g.addEdge(0, 4);
+	g.addEdge(0, 5);
+	g.addEdge(1, 3);
+	g.addEdge(1, 4);
+	g.addEdge(3, 2);
+	g.addEdge(2, 1);
+
+	std::set<int> nb = g.neighbours(0);
+	for (auto iter = nb.begin(); iter != nb.end(); ++iter)
+	{
+		int x = *iter;
+		std::cout << " neighbours "<< x << "\n";
+		//std::cin.get();
+	}
+	std::cout << " dft " << "\n";
+	g.depthFirstTraversal();
+	std::cin.get();
+	std::cout << " bft " << "\n";
+	g.breadthFirstTraversal();
+	std::cin.get();
+	std::cout << " size " << g.size() << "\n";
+	std::cout << "DONE";
+	std::cin.get();
+
+}
+
 void testInheritance()
 {
 	std::cout << "hey" << 1;
@@ -268,6 +306,7 @@ int main() {
 	//testLinkedList();
 	//testStack();
 	//testQueue();
-	testBinaryTree();
+	//testBinaryTree();
+	testGraph();
 	return 0;
 }

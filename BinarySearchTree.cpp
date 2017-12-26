@@ -30,7 +30,7 @@ void BinarySearchTree::destroyRecursive(Node* node)
 BinarySearchTree::~BinarySearchTree()
 {
 	destroyRecursive(topNode);
-	std::cout << "deletion done!: ";
+	std::cout << "deletion done!";
 	std::cin.get();
 }
 

@@ -1,8 +1,5 @@
-﻿  BinarySearchTree.cpp
-d:\c++\datastructures\datastructures\datastructures\binarysearchtree.cpp(209): warning C4129: ' ': unrecognized character escape sequence
+﻿  Main.cpp
+  Graph.cpp
   Generating Code...
-d:\c++\datastructures\datastructures\datastructures\binarysearchtree.cpp(187): warning C4715: 'BinarySearchTree::containHelper': not all control paths return a value
-  Skipping... (no relevant changes detected)
-  Main.cpp
   DataStructures.vcxproj -> D:\C++\DataStructures\DataStructures\Debug\DataStructures.exe
   DataStructures.vcxproj -> D:\C++\DataStructures\DataStructures\Debug\DataStructures.pdb (Partial PDB)

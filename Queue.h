@@ -41,6 +41,11 @@ public:
 		length = 0;
 	}
 
+	bool isEmpty()
+	{
+		return !firstNode;
+	}
+
 	// Push new data to the top of the Queue
 	void add(T value)
 	{
