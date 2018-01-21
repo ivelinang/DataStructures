@@ -370,6 +370,21 @@ LinkedList LinkedList::map(string f(string)) const
 	return result;
 }
 
+// begin iterator
+///*
+MyIterator LinkedList::begin()
+{
+	return MyIterator(head->next);
+}
+//*/
+
+///*
+MyIterator LinkedList::end()
+{
+	return MyIterator(nullptr);
+}
+//*/
+
 // Return the head of the list
 Item* LinkedList::getHead() const
 {

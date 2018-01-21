@@ -169,6 +169,30 @@ void testLinkedList()
 	cout << "apply2 done";
 	cin.get();
 	pList.printList();
+
+	myList.printList();
+
+	MyIterator ss = myList.begin();
+	cout << "start";
+	cout << endl;
+	cin.get();
+
+	MyIterator ee = myList.end();
+	cout << "end";
+	cout << endl;
+	cin.get();
+
+	bool compa = ss != ee;
+	cout << "compare: " << compa;
+	cin.get();
+
+
+
+	for (MyIterator iter = myList.begin(); iter != myList.end(); ++iter)
+	{
+		cout << "element: " << *iter;
+		cin.get();
+	}
 	
 
 }
@@ -303,7 +327,7 @@ void testInheritance()
 int main() {
 	
 	//testArrays();
-	//testLinkedList();
+	testLinkedList();
 	//testStack();
 	//testQueue();
 	//testBinaryTree();

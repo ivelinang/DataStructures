@@ -13,16 +13,22 @@
 
 #include <iostream>
 #include <string>
+#include "Struct.h"
+#include "Iterator.h"
 using namespace std;
+
+class MyIterator;
 
 //*****************************************************************
 // List items are keys with pointers to the next item.
 //*****************************************************************
+/*
 struct Item
 {
 	string key;
 	Item* next;
 };
+*/
 
 //*****************************************************************
 // Linked lists store a variable number of items.
@@ -79,6 +85,13 @@ public:
 
 	// Returns the length of the list.
 	int getLength();
+
+	// begin iterator
+	MyIterator begin();
+
+	// end iterator
+	MyIterator end();
+
 
 	// Map function to all elements (as in map func in Scala)
 	LinkedList* apply(string f(string)) const;
