@@ -14,7 +14,8 @@
 HashTable::HashTable(int tableLength)
 {
 	if (tableLength <= 0) tableLength = 13;
-	array = new LinkedList[tableLength];
+	array = new LinkedList*[tableLength];
+	std::fill_n(array, tableLength, nullptr);
 	length = tableLength;
 }
 
@@ -31,7 +32,19 @@ int HashTable::hash(string itemKey)
 void HashTable::insertItem(Item * newItem)
 {
 	int index = hash(newItem->key);
-	array[index].insertItem(newItem);
+	if (!array[index])
+		array[index] = new LinkedList;
+	array[index]->insertItem(newItem);
+}
+
+void HashTable::insertItem(string key)
+{
+	Item* temp = new Item;
+	temp->key = key;
+	temp->next = NULL;
+
+	insertItem(temp);
+
 }
 
 // Deletes an Item by key from the Hash Table.
@@ -39,7 +52,7 @@ void HashTable::insertItem(Item * newItem)
 bool HashTable::removeItem(string itemKey)
 {
 	int index = hash(itemKey);
-	return array[index].removeItem(itemKey);
+	return array[index]->removeItem(itemKey);
 }
 
 // Returns an item from the Hash Table by key.
@@ -47,7 +60,7 @@ bool HashTable::removeItem(string itemKey)
 Item * HashTable::getItemByKey(string itemKey)
 {
 	int index = hash(itemKey);
-	return array[index].getItem(itemKey);
+	return array[index]->getItem(itemKey);
 }
 
 // Display the contents of the Hash Table to console window.
@@ -57,7 +70,8 @@ void HashTable::printTable()
 	for (int i = 0; i < length; i++)
 	{
 		cout << "Bucket " << i + 1 << ": ";
-		array[i].printList();
+		if (array[i])
+			array[i]->printList();
 	}
 }
 
@@ -69,7 +83,7 @@ void HashTable::printHistogram()
 	for (int i = 0; i < length; i++)
 	{
 		cout << i + 1 << ":\t";
-		for (int j = 0; j < array[i].getLength(); j++)
+		for (int j = 0; j < array[i]->getLength(); j++)
 			cout << " X";
 		cout << "\n";
 	}
@@ -86,7 +100,7 @@ int HashTable::getNumberOfItems()
 {
 	int itemCount = 0;
 	for (int i = 0; i < length; i++)
-		itemCount += array[i].getLength();
+		itemCount += array[i]->getLength();
 	return itemCount;
 }
 

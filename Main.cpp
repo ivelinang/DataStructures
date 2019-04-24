@@ -7,6 +7,8 @@
 #include "BinaryTree.h"
 #include "BinarySearchTree.h"
 #include "Graph.h"
+#include "HashTable.h"
+#include "HashMap.h"
 
 double func(double x)
 {
@@ -324,13 +326,60 @@ void testInheritance()
 
 }
 
+void testHashTable()
+{
+	HashTable hMap;
+	Item myItem;
+	myItem.key = "1";
+	myItem.next = NULL;
+	hMap.insertItem(&myItem);
+	hMap.insertItem("2");
+	hMap.insertItem("3");
+	hMap.insertItem("4");
+	hMap.insertItem("5");
+	hMap.insertItem("6");
+	hMap.insertItem("7");
+	hMap.insertItem("8");
+	hMap.printTable();
+	std::cin.get();
+}
+
+void testHashMap()
+{
+	HashMap hmap;
+	hmap.insertItem(1, "1");
+	hmap.insertItem(2, "2");
+	hmap.insertItem(3, "3");
+	hmap.insertItem(4, "4");
+	hmap.insertItem(5, "5");
+	hmap.insertItem(6, "7");
+	hmap.insertItem(14, "14");
+
+	std::cout << "get 1 -> " << hmap.getItemByKey(1) << "\n";
+	std::cout << "get 3 -> " << hmap.getItemByKey(3) << "\n";
+	std::cout << "get 14 -> " << hmap.getItemByKey(14) << "\n";
+	//std::cout << "get 13 -> " << hmap.getItemByKey(13) << "\n";
+
+	std::cout << "get 16 -> " << "\n";
+	try
+	{
+		auto v = hmap.getItemByKey(16);
+	}
+	catch (const std::exception&)
+	{
+		std::cout << "error get 16 -> " << "\n";
+	}
+	std::cin.get();
+}
+
 int main() {
 	
 	//testArrays();
-	testLinkedList();
+	//testLinkedList();
 	//testStack();
 	//testQueue();
 	//testBinaryTree();
-	testGraph();
+	//testGraph();
+	testHashMap();
 	return 0;
 }
