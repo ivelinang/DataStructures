@@ -29,7 +29,7 @@ class HashMap
 private:
 
 	// Array is a reference to an array of Linked Lists.
-	list<HashNode>** array;
+	list<HashNode>*/***/ array; //no need array of pointers (very inefficient), just pointer to array of Lists
 
 	// Length is the size of the Hash Table array.
 	int length;

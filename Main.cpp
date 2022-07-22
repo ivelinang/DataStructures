@@ -10,6 +10,11 @@
 #include "HashTable.h"
 #include "HashMap.h"
 
+namespace {
+
+};
+
+
 double func(double x)
 {
 	return x*x;
@@ -260,6 +265,13 @@ void testBinaryTree()
 	bTree.include(10);
 	bTree.include(20);
 
+	/*
+			8
+		4		10
+	2		6		20
+		5				
+	*/
+
 	std::cout << "done with include";
 	std::cin.get();
 
@@ -270,8 +282,18 @@ void testBinaryTree()
 	std::cout << "is in Tree v2? " << bTree.contains(1) << "\n";
 	cin.get();
 
+	std::cout << "pre-order traversal " << "\n";
 	bTree.preOrderTraversal(bTree.getTopNode());
+	std::cout << "post-order traversal " << "\n";
+	bTree.postOrderTraversal(bTree.getTopNode());
+	std::cout << "in-order traversal " << "\n";
+	bTree.inOrderTraversal(bTree.getTopNode());
 	cin.get();
+
+	bTree.include(7);
+	bTree.inOrderTraversal(bTree.getTopNode());
+	cin.get();
+
 }
 
 void testGraph()
@@ -357,6 +379,7 @@ void testHashMap()
 
 	std::cout << "get 1 -> " << hmap.getItemByKey(1) << "\n";
 	std::cout << "get 3 -> " << hmap.getItemByKey(3) << "\n";
+	std::cout << "get 6 -> " << hmap.getItemByKey(6) << "\n";
 	std::cout << "get 14 -> " << hmap.getItemByKey(14) << "\n";
 	//std::cout << "get 13 -> " << hmap.getItemByKey(13) << "\n";
 
@@ -372,14 +395,31 @@ void testHashMap()
 	std::cin.get();
 }
 
+void testReferences()
+{
+	int a = 5;
+	int &ref = a;
+	ref = 6;
+	int b = 7;
+	ref = b;
+	std::cout << "a is " << a << "\n";
+	std::cout << "ref is " << ref << "\n";
+	//but cannot reassign ref to point to b
+	b++;
+	std::cout << "a is " << a << "\n";
+	std::cout << "ref is " << ref << "\n";
+	//int &ref = b; //error
+}
+
 int main() {
 	
 	//testArrays();
 	//testLinkedList();
 	//testStack();
 	//testQueue();
-	//testBinaryTree();
+	testBinaryTree();
 	//testGraph();
-	testHashMap();
+	//testHashMap();
+	
 	return 0;
 }

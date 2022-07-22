@@ -19,7 +19,7 @@ class HashTable
 {
 private:
 
-	// Array is a reference to an array of Linked Lists.
+	// Array is a reference to an array of Linked Lists. [array of pointers - each pointer points to a linked list]
 	LinkedList** array;
 
 	// Length is the size of the Hash Table array.

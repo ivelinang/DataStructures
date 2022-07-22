@@ -14,7 +14,7 @@
 HashTable::HashTable(int tableLength)
 {
 	if (tableLength <= 0) tableLength = 13;
-	array = new LinkedList*[tableLength];
+	array = new LinkedList*[tableLength]; //array of length tablelength, each elem is pointer to LinkedList
 	std::fill_n(array, tableLength, nullptr);
 	length = tableLength;
 }
@@ -33,7 +33,7 @@ void HashTable::insertItem(Item * newItem)
 {
 	int index = hash(newItem->key);
 	if (!array[index])
-		array[index] = new LinkedList;
+		array[index] = new LinkedList; //create new linkedlist
 	array[index]->insertItem(newItem);
 }
 
